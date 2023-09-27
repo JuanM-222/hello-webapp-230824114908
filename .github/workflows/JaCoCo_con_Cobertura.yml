@@ -54,7 +54,7 @@ jobs:
             echo "Code coverage is below 80%, setting workflow status to failure."
             exit 1
           fi
-      - name: Fail if coverage is below 50%
+      - name: cobertura por debajo 50% error
         if: ${{ steps.jacoco.outputs.coverage < 50.0 }}
         run: |
             echo "Code coverage is below 50%."
