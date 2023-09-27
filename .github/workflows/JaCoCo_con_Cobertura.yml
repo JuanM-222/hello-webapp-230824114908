@@ -46,13 +46,19 @@ jobs:
           echo "coverage = ${{ steps.jacoco.outputs.coverage }}"
           echo "branches = ${{ steps.jacoco.outputs.branches }}"
 
-      - name: Check coverage percentage 50%
+       
+      - name: Check coverage percentage 80%
         run: |
           COVERAGE=$(echo "${{ steps.jacoco.outputs.coverage }}" | tr -d '%')
-          if [ "$COVERAGE" -lt 50 ]; then
-            echo "Code coverage is below 50%, setting workflow status to failure."
+          if [ "$COVERAGE" -lt 80 ]; then
+            echo "Code coverage is below 80%, setting workflow status to failure."
             exit 1
           fi
+      - name: Fail if coverage is below 50%
+        if: ${{ steps.jacoco.outputs.coverage < 50.0 }}
+        run: |
+            echo "Code coverage is below 50%."
+            exit 1
 
       - name: Comment on PR with coverage percentages
         if: ${{ github.event_name == 'pull_request' }}
