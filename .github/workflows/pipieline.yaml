@@ -1,0 +1,18 @@
+name: Docker Image CI for GHCR
+
+on:
+   push:
+    branches: [ maven ]
+env:
+
+  TAG: ${{ github.run_number }}
+jobs: 
+  build_and_publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build and push the image
+        run: |
+          docker login --username sebasq17  --password ${{secrets.GH_PAT}} ghcr.io
+          docker build . -t ghcr.io/sebasq17/pet_clinic-ghcr:v${{ github.run_number }}
+          docker push ghcr.io/sebasq17/pet_clinic-ghcr:v${{ github.run_number }}
