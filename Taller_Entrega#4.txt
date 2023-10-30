@@ -1,0 +1,50 @@
+Recursos de Azure necesarios:
+
+a. Máquinas Virtuales (VMs): Las VMs son esenciales para alojar tanto la aplicación web como
+ la base de datos de Pet Clinic. En este caso, la redundancia y la alta disponibilidad son primordiales, por lo que
+ se recomienda implementar al menos dos instancias de VMs y configurar un equilibrio de carga para distribuir el tráfico
+ de manera uniforme.
+
+b. Azure App Service: Este servicio será fundamental para desplegar la aplicación web de Pet Clinic, permitiendo
+ una administración simplificada y escalabilidad de la aplicación.
+
+c. Azure SQL Database: Para garantizar un almacenamiento confiable y seguro de los datos de la aplicación, como información
+ de mascotas, registros de citas, etc.
+
+d. Azure Traffic Manager: La distribución del tráfico se logra mediante Azure Traffic Manager, asegurando la
+ disponibilidad continua y la respuesta eficiente en caso de fallas en las instancias de VM.
+
+e. Azure CDN: La implementación de una red de entrega de contenido acelerará la entrega de datos multimedia
+ a los usuarios, mejorando la experiencia.
+
+f. Azure Application Insights: El monitoreo y la administración eficaz de la aplicación se lograrán 
+mediante Azure Application Insights, proporcionando datos valiosos sobre el rendimiento y los posibles problemas.
+
+g. Azure Key Vault: Almacenamiento seguro de secretos y claves de la aplicación, crucial para la seguridad 
+de los datos y la administración de contraseñas.
+
+h. Azure Active Directory: Para gestionar las identidades de usuarios y la autenticación
+ de manera efectiva, lo que es esencial para garantizar la seguridad y el acceso controlado.
+
+i. Azure Virtual Network: La configuración de una red segura y privada mediante Azure Virtual Network
+ es imprescindible para la protección de los datos y la aplicación.
+
+j. Almacenamiento de blobs de Azure: Será utilizado para almacenar recursos multimedia, como imágenes
+ de mascotas, de manera eficiente y escalable.
+
+k. Servicio de notificaciones de Azure (por ejemplo, Azure Notification Hubs): Para enviar notificaciones
+ a los usuarios y mantenerlos informados.
+
+l. Azure DDoS Protection: La protección contra ataques de denegación de servicio distribuido (DDoS) se logra
+ mediante Azure DDoS Protection, garantizando la integridad de la aplicación.
+
+Estimación del presupuesto mensual:
+
+Los costos mensuales variarán en función de numerosos factores, como el tipo de VMs, el plan de App Service,
+ el rendimiento y capacidad de la base de datos, el tráfico CDN, entre otros. Es importante tener en cuenta que
+ los costos pueden oscilar en el rango de cientos a miles de dólares al mes, dependiendo de la configuración exacta.
+
+Para obtener una estimación precisa, se recomienda utilizar la calculadora de precios de Azure, la cual
+ te permitirá ajustar los costos según tus necesidades específicas. Además, la optimización y la adaptación
+ de los recursos en función de la demanda real pueden ayudar a reducir costos, usando la calculadora y implementando los recursos necesarios para atender personas que se encuentran
+ en Alemania, 10.000 Usuarios concurrentes,la aplicacion debe estar disponible 24n horas de lunes a domingo toso los dias del año) tendra un costo aproximado de 3659,09 US$
